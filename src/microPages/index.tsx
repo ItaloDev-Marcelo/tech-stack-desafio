@@ -1,6 +1,11 @@
 import Card from "../components/card"
 
-export default function MicroPages({Title,data}) {
+type Props = {
+    Title: string,
+    data:array
+}
+
+export default function MicroPages({Title,data}: Props) {
     return (
          <main>
                <h1>{Title}</h1>
