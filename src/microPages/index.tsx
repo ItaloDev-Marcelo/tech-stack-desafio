@@ -1,8 +1,15 @@
 import Card from "../components/card"
 
+interface Item {
+    id: number;
+    bubbleTitle: string;
+    username: string;
+    position: string;
+}
+
 type Props = {
-    Title: string,
-    data:array
+    Title: string;
+    data: Item[];
 }
 
 export default function MicroPages({Title,data}: Props) {
@@ -11,7 +18,7 @@ export default function MicroPages({Title,data}: Props) {
                <h1>{Title}</h1>
                <div>
                    {
-                    data.map((bubbleTitle, username, position) => {
+                    data.map(({bubbleTitle, username, position}) => {
                        return <Card bubbleTitle={bubbleTitle} username={username} position={position} />
                     })
                    }
